@@ -1,0 +1,58 @@
+:root{
+  /* colors */
+  --text-primary-cl:#101A24;
+  --text-secondary-cl:#5C6574;
+  --background-primary-cl:#EA6D27;
+  --background-color:rgba(243, 244, 244, 1);
+  --warning:#ffb627;
+  --danger:#e5383b;
+  --success:#70e000;
+  /* font-familiy */
+  --main-font: David Libre;
+  --sec-font:Inter;
+  /* font size */
+  --fs-pr:50px;
+  --fs-sc:30px;
+  --fs-sm:20px;
+  
+}
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row{
+  display: flex;
+  align-items: center;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+}
+body {
+  width:100%;
+  height:100vh;
+  overflow: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*{
+  box-sizing: border-box;
+}
+.root{
+  width:100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
