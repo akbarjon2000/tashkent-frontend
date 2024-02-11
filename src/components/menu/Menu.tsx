@@ -49,7 +49,7 @@ const Menu = () => {
             {
                 menu?.map((item:any) => {
                     if(item.menu_id === type) return (
-                        <Item item={item} onClick = {(e:React.MouseEvent) => handleItemClick(e,item)} />
+                        <Item key ={item._id} item={item} onClick = {(e:React.MouseEvent) => handleItemClick(e,item)} />
                     )
 })
             }

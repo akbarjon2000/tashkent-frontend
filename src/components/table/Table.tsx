@@ -132,10 +132,10 @@ const Table = () => {
                     <p className='text'>{t("DATE")} ({thisMonth}): {new Date(table.date).getDate()}</p>
                     <div className='row' style={{gap:"20px"}}>
                         {days.map(day => (
-                            <>
+                            <div key={day}>
                             <label style={{backgroundColor:`${table.date == day ? "var(--background-primary-cl)" : "#367ba5"}`}} className='center num date_box' htmlFor={`${day}`}>{new Date(day).getDate()}</label>
                             <input onChange={() => {setTable(prev => ({...prev, date:day})); handleMonth(day) }} value={day}  className='radio' type='radio' id={`${day}`} name='date'/>
-                            </>
+                            </div>
                         ))}
                         <input onChange={(e) => {setTable(prev => ({...prev, date:e.target.valueAsNumber})); handleMonth(e.target.valueAsNumber)}} ref={dateRef} id='calendar'  type='date' className='center calendar' min={new Date().toISOString().split('T')[0]} max = {date} />
                     </div>

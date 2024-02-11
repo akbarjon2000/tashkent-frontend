@@ -148,7 +148,7 @@ const Reviews = () => {
             {reviews?.map(({user_info, review_details}) => {
                 let date = new Date(review_details.created_at).toDateString()
                 return (
-                    <div className='col review-card'>
+                    <div key={review_details._id} className='col review-card'>
                         <div className='row' style={{gap:"20px"}}>
                             <FaCircleUser className="user_icon"/>
                             <h3 className='user_name'>{user_info.first_name} {user_info.last_name}</h3>
