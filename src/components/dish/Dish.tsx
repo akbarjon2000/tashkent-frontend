@@ -31,8 +31,9 @@ const Dish = () => {
     const getDish = async () => {
         try {
             console.log(item)
-            let res = await axios.post("https://tashkent-server-3.onrender.com/get-dish", {dish_id:item});;
+            let res = await axios.post("https://tashkent-server-3.onrender.com/get-dish", {dish_id:item._id});;
             setDish(res.data)
+            console.log(res.data)
         } catch (error) {
             
         }
