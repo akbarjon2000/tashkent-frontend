@@ -1,6 +1,6 @@
 import {styled} from "styled-components"
 
-export const Container = styled.div<{display:boolean, navDisplay:boolean}>`
+export const Container = styled.div<{display:boolean, navdisplay:boolean}>`
     position:absolute;
     width:0;
     height:0;
@@ -61,6 +61,6 @@ export const Container = styled.div<{display:boolean, navDisplay:boolean}>`
         font-weight:500;
     }
     @media(max-width:590px){
-        display:${({navDisplay}) => navDisplay ? "none" : "block"};
+        display:${({navdisplay}) => navdisplay ? "none" : "block"};
     }
 `

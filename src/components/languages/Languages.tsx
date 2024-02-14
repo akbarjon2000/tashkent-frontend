@@ -3,9 +3,9 @@ import { Container } from './languages_style'
 import {FcGlobe} from "react-icons/fc"
 import i18n from './i18n'
 type LangProps = {
-  navDisplay : boolean
+  navdisplay : boolean
 }
-const Languages = ({navDisplay}:LangProps) => {
+const Languages = ({navdisplay}:LangProps) => {
     const [display, setDisplay] = useState<boolean>(false);
     const [language, setLanguage] = useState("en")
     const handleGlobe = () => {
@@ -19,7 +19,7 @@ const Languages = ({navDisplay}:LangProps) => {
         i18n.changeLanguage(language)
     },[language])
   return (
-    <Container display={display} navDisplay={navDisplay}>
+    <Container display={display} navdisplay={navdisplay}>
         <FcGlobe className='globe' onClick={handleGlobe} />
         <div onClick={() => handleChange("uz")} className='center uz'>UZ</div>
         <div onClick={() => handleChange("en")}  className='center eng'>EN</div>

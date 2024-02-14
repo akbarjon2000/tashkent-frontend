@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 const Navbar = () => {
     const [message, setMessage] = useState<string>("Successfully Updated")
     const [display, setDisplay] = useState<string>("none");
-    const [navDisplay, setNavDisplay] = useState(false);
+    const [navdisplay, setNavDisplay] = useState(false);
     const [modal, setModal] = useState<string>("none");
     const [loc, setLoc] = useState<string>("/");
     const {setLogin} = useContext(LoginContext);
@@ -32,7 +32,7 @@ const Navbar = () => {
         navigate("/sign-in");
     }
     const handleNavToggle = () => {
-        setNavDisplay(!navDisplay);
+        setNavDisplay(!navdisplay);
     }
     useEffect(() => {
         setLoc(window.location.href)
@@ -40,9 +40,9 @@ const Navbar = () => {
     let location = window.location.pathname;
     console.log(location);
   return (
-    <Container path = {location} display = {navDisplay}>
+    <Container path = {location} display = {navdisplay}>
         <BiMenu onClick={handleNavToggle} className='nav_icon'/>
-        <Languages navDisplay = {navDisplay}/>
+        <Languages navdisplay = {navdisplay}/>
         <Modal display={modal} height="250px" width='300px'>
             <p className='modal_header'>Are you sure to log out?</p>
             <div onClick={handleLogOut} className='center confirm'>Confirm</div>
@@ -53,18 +53,18 @@ const Navbar = () => {
             <h2 style={{ width:"fit-content", margin:0}}>Tashkent</h2>
         </Link>
         <div className='nav'>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/menu">{navDisplay ? <IoFastFoodSharp className='link_icon'/>:null}{t("menu")}</Link>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/reviews">{navDisplay ? <FcGallery className='link_icon'/>:null}{t("gallery")}</Link>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/about">{navDisplay ? <FcAbout className='link_icon'/>:null}{t("about")}</Link>
-            {/* <Link className='link' to="/contact">{navDisplay ? <FcBusinessContact className='link_icon'/>:null}{t("Contact")}</Link> */}
+            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/menu">{navdisplay ? <IoFastFoodSharp className='link_icon'/>:null}{t("menu")}</Link>
+            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/reviews">{navdisplay ? <FcGallery className='link_icon'/>:null}{t("gallery")}</Link>
+            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/about">{navdisplay ? <FcAbout className='link_icon'/>:null}{t("about")}</Link>
+            {/* <Link className='link' to="/contact">{navdisplay ? <FcBusinessContact className='link_icon'/>:null}{t("Contact")}</Link> */}
         </div>
         <div onClick={() => navigate("/table")} className='book_bnt'>{t("book")}</div>
-        {navDisplay?
+        {navdisplay?
         <div className='col info_div_col' style={{gap:"20px"}}>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/profile">{navDisplay ? <LuUser className='link_icon'/>:null}{t("Profile")}</Link>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/cart">{navDisplay ? <BsFillCartCheckFill className='link_icon'/>:null}{t("Cart")}</Link>
-            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/wishlist">{navDisplay ? <FcLike className='link_icon'/>:null}{t("Wish list")}</Link>
-            <Link className='link' to="/sign-in" onClick={handleLogOut}>{navDisplay ? <IoLogOutOutline className='link_icon'/>:null}{t("Log out")}</Link>
+            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/profile">{navdisplay ? <LuUser className='link_icon'/>:null}{t("Profile")}</Link>
+            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/cart">{navdisplay ? <BsFillCartCheckFill className='link_icon'/>:null}{t("Cart")}</Link>
+            <Link onClick={() => {setNavDisplay(false);}} className='link' to="/wishlist">{navdisplay ? <FcLike className='link_icon'/>:null}{t("Wish list")}</Link>
+            <Link className='link' to="/sign-in" onClick={handleLogOut}>{navdisplay ? <IoLogOutOutline className='link_icon'/>:null}{t("Log out")}</Link>
         </div>
         :
         <div className='info_div'>
