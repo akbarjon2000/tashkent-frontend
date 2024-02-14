@@ -40,7 +40,7 @@ useEffect(() => {
                   <Navbar/>
                   <Routes>
 
-                    <Route index path='/' element={<Landing/>} />
+                    <Route index path='/' element={<Landing/>}/>
                     <Route path='/menu' element={<Menu/>} />
                     <Route path='/dish' element={<Dish/>} />
                     <Route path='/cart' element={<Cart/>}/>
@@ -49,6 +49,8 @@ useEffect(() => {
                     <Route path='/wishlist' element={<Wishlist/>}/>
                     <Route path='/reviews' element={<Reviews/>}/>
                     <Route path='/about' element={<About/>}/>
+                    <Route index path='*' element={<Landing/>} />
+
                     
                   </Routes>
               </>
