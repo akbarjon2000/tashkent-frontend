@@ -7,8 +7,8 @@ export const Container = styled.div`
     background-image:url("./Background.png");
     background-size:100%;
     .logo{
-        width:200px;
-        height:60px;
+        width:150px;
+        height:90px;
         position:absolute;
         top:50px;
         left:70px;
@@ -67,5 +67,25 @@ export const Container = styled.div`
         text-align:center;
         border-radius:30px;
         cursor:pointer;
+    }
+    @media(max-width:800px){
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        .welcome{
+            display:none;
+        }
+        .form{
+            width:100%;
+            max-width:700px;
+            min-width:400px;
+            position:unset;
+            margin:0 auto;
+            align-items:center;
+            justify-content:center;
+            padding:0;
+        }
+        
+        
     }
 `

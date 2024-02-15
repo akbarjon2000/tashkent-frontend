@@ -59,4 +59,10 @@ export const Container = styled.div`
         font-weight:500;
         cursor: pointer;
     }
+    @media(min-width:800px){
+        .meal{
+            display:none;
+        }
+        
+    }
 `
