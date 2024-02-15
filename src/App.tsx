@@ -56,6 +56,7 @@ useEffect(() => {
               </>
               :<Routes>
                   <Route index={true} path='/sign-up' element={<SignUp/>}/>
+                  <Route path='/*' element={<SignUp/>}/>
                   <Route path='/sign-in' element={<SignIn/>}/>
                 </Routes>
             }
