@@ -122,4 +122,38 @@ export const Container = styled.div`
         margin-top:0;
         font-weight:700;
     }
+    @media(max-width:800px){
+    flex-direction:column;
+    .col1{
+        width:90%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+    }
+    p{
+        text-align:center;
+        margin:0 auto;
+    }
+    .btns{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin:0 auto;
+        margin-top:30px;
+    }
+    .img{
+        width:90%;
+        height:50vh;
+        max-height:400px;
+        min-height:300px;
+        margin:0 auto;
+        margin-bottom:30px;
+    }
+    .desc{
+        margin:0 auto;
+        width:100%;
+    }
+  }
 `

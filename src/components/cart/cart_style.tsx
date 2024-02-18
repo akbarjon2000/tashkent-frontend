@@ -130,6 +130,7 @@ export const Container = styled.div`
     border-radius:8px;
     cursor:pointer;
   }
+ 
 
 @-webkit-keyframes vibrate-1 {
   0% {
@@ -157,5 +158,7 @@ export const Container = styled.div`
             transform: translate(0);
   }
 }
+
+
 
 `
