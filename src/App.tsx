@@ -7,7 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import Dish from './components/dish/Dish';
 import DishContextProvider from './context/dish_context';
 import LoadingContextProvider, { LoadingContext } from './context/loadingContext';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Cart from './components/cart/Cart';
 import SignUp from './components/login/sign_up/SignUp';
 import LoginContextProvider, { LoginContext } from './context/loginContext';
@@ -17,8 +17,11 @@ import Table from './components/table/Table';
 import Wishlist from './components/wishlist/Wishlist';
 import Reviews from './components/Reviews/Reviews';
 import About from './components/about/About';
+import Admin from './components/Admin/Admin';
 
 function App() {
+  const [candidates,setCandidates] = useState<any>([]);
+
   const {loading} = useContext(LoadingContext);
   const {login} = useContext(LoginContext);
   // const navigate = useNavigate();
@@ -27,6 +30,7 @@ function App() {
 useEffect(() => {
   // if(login!) navigate("/sign-in")
 }, [])
+
   return (
     <div className="App" style={{overflow:loading?"hidden":"auto", width:"100%", height:"100vh"}}>
       <div className='loading' style={{width:"100%", height:"100vh", backgroundColor:"rgba(0, 0, 0, 0.3)", position:"absolute", top:0, left:0, display:loading?"flex":"none", zIndex:"3", alignItems:"center", justifyContent:"center"}}>
@@ -49,6 +53,7 @@ useEffect(() => {
                     <Route path='/wishlist' element={<Wishlist/>}/>
                     <Route path='/reviews' element={<Reviews/>}/>
                     <Route path='/about' element={<About/>}/>
+                    <Route path='/secret-admin' element={<Admin/>}/>
                     <Route index path='*' element={<Landing/>} />
 
                     
@@ -60,7 +65,7 @@ useEffect(() => {
                   <Route path='/sign-in' element={<SignIn/>}/>
                 </Routes>
             }
-
+          
             </BrowserRouter>
           </MenuConextProvider>
         </DishContextProvider>

@@ -25,6 +25,7 @@ export const Container = styled.div`
         letter-spacing: -3.6px;
         margin-bottom:0;
         margin-top:50px;
+        
     }
     .desc{
         font-family: var(--sec-font);
