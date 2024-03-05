@@ -40,8 +40,11 @@ const Admin = () => {
                 let formData = new FormData();
                 formData.append("imgfile", newFile);
                 let res = await axios.post("https://tashkent-server-3.onrender.com/upload-image", formData);
-                setMenu((prev:any) => ({...prev, image:res.data}));
-                let set_menu = await axios.post("https://tashkent-server-3.onrender.com/add-menu", menu)
+                // setMenu((prev:any) => ({...prev, image:res.data}));
+                let set_menu = await axios.post("https://tashkent-server-3.onrender.com/add-menu", {
+                    menu,
+                    image:res.data
+                })
                 setMenu(initial_state);
             }
         } catch (error) {
