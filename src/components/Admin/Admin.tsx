@@ -42,7 +42,7 @@ const Admin = () => {
                 let res = await axios.post("https://tashkent-server-3.onrender.com/upload-image", formData);
                 // setMenu((prev:any) => ({...prev, image:res.data}));
                 let set_menu = await axios.post("https://tashkent-server-3.onrender.com/add-menu", {
-                    menu,
+                    ...menu,
                     image:res.data
                 })
                 setMenu(initial_state);
