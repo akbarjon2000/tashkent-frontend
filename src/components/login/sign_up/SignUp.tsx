@@ -3,6 +3,7 @@ import { Container } from './sign_up_style'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { LoginContext } from '../../../context/loginContext'
+import { LoadingContext } from '../../../context/loadingContext'
 type FormType = {
     first_name:string,
     last_name:string,
@@ -13,14 +14,18 @@ type FormType = {
 const SignUp = () => {
     const [form, setForm] = useState({} as FormType);
     const {setLogin} = useContext(LoginContext);
+    const {loading, setLoading} = useContext(LoadingContext)
     const handleSubmit = async (e:any) => {
         e.preventDefault();
         try {
+            setLoading(true)
             const res = await axios.post("https://tashkent-server-3.onrender.com/sign-up", {form});
-            console.log(res);
+            localStorage.setItem("auth", res.data);
             setLogin(true);
+            setLoading(false)
 
         } catch (error) {
+            setLoading(false);
             console.log("SIGNUP ERROR", error);
         }
     }
